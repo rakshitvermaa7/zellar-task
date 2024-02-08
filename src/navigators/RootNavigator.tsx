@@ -14,7 +14,10 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 const RootNavigator = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator>
+      <RootStack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}>
         <RootStack.Screen name="Main" component={MainScreen} />
         <RootStack.Screen name="Home" component={HomeScreen} />
       </RootStack.Navigator>

@@ -1,6 +1,7 @@
 module.exports = {
   presets: ['module:@react-native/babel-preset'],
   plugins: [
+    'react-native-paper/babel',
     [
       'module-resolver',
       {
@@ -10,7 +11,7 @@ module.exports = {
           '@components': './src/components',
           '@navigators': './src/navigators',
           '@screens': './src/screens',
-          '@utils': './src/utils',
+          '@lib': './src/lib',
         },
       },
     ],

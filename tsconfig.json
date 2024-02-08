@@ -12,8 +12,8 @@
       "@screens/*": [
         "src/screens/*"
       ],
-      "@utils/*": [
-        "src/utils/*"
+      "@lib/*": [
+        "src/lib/*"
       ],
    },
   }

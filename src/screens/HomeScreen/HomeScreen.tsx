@@ -19,7 +19,7 @@ const HomeScreen = () => {
       title: STRINGS.HOME,
       headerBackVisible: false,
       headerTitleStyle: styles.headerTitle,
-      headerRight: () => <Navigator imageSource={Imagelinks.arrowLeft} text={STRINGS.MAIN} onPress={() => navigation.goBack()} navigatorContainerStyle={styles.navigatorStyle} />,
+      headerRight: () => <Navigator imageSource={Imagelinks.arrowLeft} text={STRINGS.USERS} onPress={() => navigation.goBack()} navigatorContainerStyle={styles.navigatorStyle} />,
     });
   }, []);
 

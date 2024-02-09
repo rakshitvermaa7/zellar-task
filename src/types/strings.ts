@@ -6,7 +6,6 @@ const STRINGS = {
   HOME_SCREEN: 'Home Screen',
   HOME: 'Home',
   USERS: 'Users',
-  MAIN: 'Main',
   TYPE_NAME: 'Type name...',
   ADMIN_USERS: 'Admin Users',
   MANAGER_USERS: 'Manager Users',

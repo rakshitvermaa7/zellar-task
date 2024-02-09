@@ -1,5 +1,5 @@
 import { SafeAreaView, StatusBar, Text, View } from 'react-native';
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import styles from './HomeScreen.styles';
 import { COLOR_CODE } from 'src/types/enums';
 import Navigator from '@components/Navigator/Navigator';
@@ -14,6 +14,15 @@ export type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamL
 const HomeScreen = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
 
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: STRINGS.HOME,
+      headerBackVisible: false,
+      headerTitleStyle: styles.headerTitle,
+      headerRight: () => <Navigator imageSource={Imagelinks.arrowLeft} text={STRINGS.MAIN} onPress={() => navigation.goBack()} navigatorContainerStyle={styles.navigatorStyle} />,
+    });
+  }, []);
+
   return (
     <View style={styles.mainContainer}>
       <StatusBar barStyle="dark-content" backgroundColor={COLOR_CODE.BACKGROUND_COLOR} />
@@ -22,8 +31,6 @@ const HomeScreen = () => {
         style={{
           flex: 1,
         }}>
-        <Navigator imageSource={Imagelinks.arrowLeft} text={STRINGS.MAIN} onPress={() => navigation.goBack()} navigatorContainerStyle={styles.navigatorStyle} />
-
         <Text style={styles.homeScreenText}>{STRINGS.HOME_SCREEN}</Text>
       </SafeAreaView>
     </View>

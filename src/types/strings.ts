@@ -5,7 +5,11 @@ const STRINGS = {
   NO_SEARCH_RESULTS: 'No search results...',
   HOME_SCREEN: 'Home Screen',
   HOME: 'Home',
+  USERS: 'Users',
   MAIN: 'Main',
+  TYPE_NAME: 'Type name...',
+  ADMIN_USERS: 'Admin Users',
+  MANAGER_USERS: 'Manager Users',
 };
 
 export default STRINGS;

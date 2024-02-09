@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { COLOR_CODE } from 'src/types/enums';
 
 const styles = StyleSheet.create({
+  headerTitle: {
+    color: COLOR_CODE.PRIMARY,
+  },
   mainContainer: {
     flex: 1,
     backgroundColor: COLOR_CODE.BACKGROUND_COLOR,

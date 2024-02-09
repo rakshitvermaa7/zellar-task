@@ -8,10 +8,12 @@ type Props = {
 };
 
 const User = ({ user }: Props) => {
+  const userNameFirstLetter = user.name?.slice(0, 1);
+
   return (
     <View style={styles.userContainer}>
       <View style={styles.nameIconContainer}>
-        <Text style={styles.nameText}>{user.name?.slice(0, 1)}</Text>
+        <Text style={styles.nameText}>{userNameFirstLetter}</Text>
       </View>
 
       <View style={styles.detailsContainer}>

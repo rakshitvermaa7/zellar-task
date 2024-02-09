@@ -33,8 +33,6 @@ const MainScreen = () => {
         role: { eq: role },
       },
     },
-    onCompleted: () => console.log('FETCHED DATA'),
-    onError: e => console.log('error', e),
   });
 
   // FILTERING USERS BECAUSE THE RESPONSES FOR BOTH ADMIN AND MANAGER ROLES ARE SAME i.e. ALL 4 USERS
@@ -58,7 +56,7 @@ const MainScreen = () => {
   }, [refetch]);
 
   const refetchData = async () => {
-    await refetch().then(data => console.log('data', data));
+    await refetch();
   };
 
   useEffect(() => {
@@ -68,19 +66,21 @@ const MainScreen = () => {
   }, [isFocused]);
 
   useEffect(() => {
-    if (searchText) {
-      const res = data?.listZellerCustomers?.items?.filter(item => {
+    if (searchText && users) {
+      const res = users.filter(item => {
         if (item?.name?.includes(searchText)) return item;
       });
 
-      if (res) {
+      if (res && res.length > 0) {
         // @ts-ignore
         setSearchedUsers(res);
+      } else {
+        setSearchedUsers([]);
       }
     } else {
       setSearchedUsers([]);
     }
-  }, [searchText]);
+  }, [searchText, role]);
 
   const handleClick = (checkedValue: CHECKED_ROLES, roleValue: USER_ROLES) => {
     setChecked(checkedValue);
